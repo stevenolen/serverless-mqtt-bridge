@@ -36,7 +36,7 @@ curl \
   -H 'x-api-key: apikeyhere' \
   -H 'Content-Type: application/json' \
   -d '{"topic":"sometopic", "payload":"somepayload"}' \
-  https://exampleurl.execute-api.us-west-2.amazonaws.com/dev/publish
+  https://exampleurl.execute-api.us-west-2.amazonaws.com/dev/
 ```
 
 ## parameters
