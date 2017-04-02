@@ -1,0 +1,10 @@
+{
+  "name": "serverless-mqtt-bridge",
+  "version": "1.0.0",
+  "description": "Serverless MQTT Bridge",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "serverless-python-requirements": "^2.0.0-beta.5"
+  }
+}

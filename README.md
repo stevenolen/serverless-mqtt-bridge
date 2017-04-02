@@ -9,6 +9,8 @@ Inspired by [this blog post](https://home-assistant.io/blog/2017/03/28/http-to-m
 npm install -g serverless
 # check this project out an cd to it
 git clone https://github.com/stevenolen/serverless-mqtt-bridge && cd serverless-mqtt-bridge
+# install serverless plugin dep
+npm install
 # **customize at will, but specifically the mqtt_url env and then deploy
 serverless deploy
 ```
