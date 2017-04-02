@@ -1,0 +1,36 @@
+service: http-to-mqtt
+
+provider:
+  name: aws
+  runtime: python2.7
+  stage: dev
+  apiKeys:
+    # this needs to be wired up manually to a usage plan in console
+    - ${opt:stage, self:provider.stage}-key
+  environment:
+    STAGE: ${opt:stage, self:provider.stage}
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+
+package:
+  exclude:
+    - env.yml
+
+functions:
+  publish:
+    description: publishes a payload to an mqtt broker
+    handler: PublishMqtt.handler
+    memorySize: 128
+    timeout: 10
+    environment:
+      MQTT_URL: ${file(./env.yml):${opt:stage, self:provider.stage}.mqtt_url}
+    events:
+      - http:
+          path: /
+          method: post
+          private: true

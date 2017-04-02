@@ -1,0 +1,4 @@
+.serverless/
+.requirements/
+.envrc
+env.yml
